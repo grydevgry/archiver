@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Auto-Archiver</h1>
+    <span class="badge" id="hostBadge" title="État du hôte local (yt-dlp)">…</span>
+  </header>
+
+  <!-- Onglet courant -->
+  <section id="tabSection">
+    <div id="tabInfo">
+      <span class="spin" id="tabSpin"></span>
+      <span id="tabUrl" class="tab-url">Vérification de l'onglet…</span>
+    </div>
+  </section>
+
+  <!-- Résultat de l'analyse -->
+  <section id="infoSection" class="hidden">
+    <div class="info-head">
+      <img id="infoThumb" class="info-thumb hidden" alt="vignette" referrerpolicy="no-referrer" />
+      <div class="info-head-text">
+        <strong id="infoTitle"></strong>
+        <div class="info-meta" id="infoMeta"></div>
+      </div>
+    </div>
+    <div class="info-desc" id="infoDesc"></div>
+  </section>
+
+  <!-- État en attente d'analyse -->
+  <div id="refineWaiting" class="hidden">
+    <span class="spin"></span>
+    <span id="refineLine">Analyse de la vidéo (yt-dlp)…</span>
+  </div>
+
+  <!-- Progression du téléchargement -->
+  <section id="progressSection" class="hidden">
+    <div class="progress-wrap">
+      <div class="progress-bar"><div id="progressFill"></div></div>
+      <span id="progressLabel" class="progress-label"></span>
+    </div>
+    <div id="progressLine" class="progress-line"></div>
+  </section>
+
+  <!-- Résultat final (SHA-256 !) -->
+  <section id="resultSection" class="hidden">
+    <div id="resultOk" class="result ok hidden">
+      <div class="result-title">✅ Archivée</div>
+      <div id="resultPath" class="result-path"></div>
+      <div class="hash-box">
+        <div class="hash-label">SHA-256</div>
+        <code id="hashValue" class="hash-value"></code>
+        <button id="copyHash" class="mini-btn" title="Copier l'empreinte">⧉ copier</button>
+      </div>
+      <div class="hash-note">Empreinte + source : <em>« nom.hash.txt »</em> enregistré à côté du fichier.</div>
+    </div>
+    <div id="resultErr" class="result err hidden">
+      <div class="result-title">⚠️ Échec</div>
+      <div id="resultErrorMsg" class="result-msg"></div>
+    </div>
+  </section>
+
+  <!-- Erreur d'analyse -->
+  <div id="infoError" class="info-error hidden"></div>
+
+  <!-- Actions -->
+  <footer>
+    <button id="btnInfo" class="btn">🔬 Analyser</button>
+    <button id="btnDownload" class="btn primary" disabled>⬇ Archiver</button>
+    <button id="btnCancel" class="btn" disabled>✖ Annuler</button>
+  </footer>
+
+  <div id="statusBar" class="status-bar hidden"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

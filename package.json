@@ -1,0 +1,17 @@
+{
+  "name": "auto-archiver-extension",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Auto-Archiver — host natif (Node SEA) + tests aller-retour du protocole Native Messaging",
+  "type": "commonjs",
+  "scripts": {
+    "build:sea": "node build-sea.mjs",
+    "test": "node test/test-runner.cjs",
+    "test:framing": "node test/test-runner.cjs test/test-framing.cjs",
+    "test:media": "node test/test-runner.cjs test/test-media.cjs",
+    "test:e2e": "node test/test-runner.cjs test/test-e2e.cjs",
+    "install": "powershell -ExecutionPolicy Bypass -File install.ps1",
+    "install:node": "powershell -ExecutionPolicy Bypass -File install.ps1 -Engine node",
+    "install:python": "powershell -ExecutionPolicy Bypass -File install.ps1 -Engine python"
+  }
+}

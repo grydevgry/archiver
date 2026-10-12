@@ -1,0 +1,7 @@
+{
+  "name": "auto_archiver_native_host",
+  "description": "Native Messaging Host for Auto-Archiver extension",
+  "path": "C:\\Users\\gry\\.auto-archiver\\bin\\auto-archiver-host.exe",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://bjhpppaijndghboidohfgmamfelbbefi/"]
+}
